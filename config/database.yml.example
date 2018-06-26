@@ -1,0 +1,11 @@
+default: &default
+  adapter: mysql2
+  encoding: utf8
+  user: username
+  password: password
+development:
+  <<: *default
+  database: demo_vuejs_rails_development
+production:
+  <<: *default
+  database: demo_vuejs_rails_production

@@ -1,0 +1,95 @@
+<script type="text/x-template" id="upwork_request-row">
+    <tr>
+        <td>
+            <div v-if="editMode">
+                <input type="text" v-model="upwork_request.name"><br>
+                <span class="red">{{ errors.name }}</span>
+            </div>
+            <div v-else>{{ upwork_request.name }}</div>
+        </td>
+        <td>
+            <div v-if="editMode">
+                <input type="text" v-model="upwork_request.email"><br>
+                <span class="red">{{ errors.email }}</span>
+            </div>
+            <div v-else>{{ upwork_request.email }}</div>
+        </td>
+        <td>
+            <div v-if="editMode">
+                <input type="text" v-model="upwork_request.profile_url"><br>
+                <span class="red">{{ errors.profile_url }}</span>
+            </div>
+            <div v-else>{{ upwork_request.profile_url }}</div>
+        </td>
+
+        <td>
+            <div v-if="editMode">
+                <input type="text" v-model="upwork_request.message"><br>
+                <span class="red">{{ errors.message }}</span>
+            </div>
+            <div v-else>{{ upwork_request.message }}</div>
+        </td>
+        <td>
+            <button v-if="editMode" @click="updateUpworkRequest">Update</button>
+        </td>
+    </tr>
+</script>
+
+
+
+<html>
+<head>
+    <title>Demo - Requests</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+<body>
+<div class="col-lg-12">
+    <h1>Requests</h1>
+
+    <div id="upwork_requests">
+        <table>
+            <thead>
+            <tr>
+                <th>Name</th>
+                <th>Email</th>
+                <th>Profile URL</th>
+                <th>Message</th>
+                <th></th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr
+                    is="upwork_request-row"
+                    v-for="upwork_request in upwork_requests"
+                    :upwork_request="upwork_request">
+            </tr>
+            <tr>
+                <td>
+                    <input type="text" v-model="upwork_request.name"><br>
+                    <span class="red">{{ errors.name }}</span>
+                </td>
+                <td>
+                    <input type="text" v-model="upwork_request.email"><br>
+                    <span class="red">{{ errors.email }}</span>
+                </td>
+                <td>
+                    <input type="text" v-model="upwork_request.profile_url"><br>
+                    <span class="red">{{ errors.profile_url }}</span>
+                </td>
+                <td>
+                    <input type="text" v-model="upwork_request.message"><br>
+                    <span class="red">{{ errors.message }}</span>
+                </td>
+
+                <td><button @click="createUpworkRequest">Send And Create!</button></td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
+    </div>
+
+</body>
+</html>
+
+
+

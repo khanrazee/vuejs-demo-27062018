@@ -1,0 +1,20 @@
+{
+  "name": "demo-vuejs-rails-app-27-june-18",
+  "version": "0.0.1",
+  "authors": [
+    "Razee Khan <raxeekh@gmail.com>"
+  ],
+  "license": "MIT",
+  "homepage": "https://github.com/khanrazee/vuejs-demo-27062018",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "vue": "~1.0.16",
+    "vue-resource": "~0.7.0"
+  }
+}

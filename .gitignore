@@ -1,0 +1,15 @@
+.rspec
+/log
+/tmp
+/coverage/
+/spec/tmp
+
+# Only include if you have production secrets in this file, which is no longer a Rails default
+# config/secrets.yml
+
+# unless supporting rvm < 1.11.0 or doing something fancy, ignore this:
+.rvmrc
+
+#Ignore config variables created by figaro
+config/application.yml
+

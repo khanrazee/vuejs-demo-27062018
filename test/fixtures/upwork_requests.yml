@@ -1,0 +1,11 @@
+one:
+  name: MyString
+  email: MyString
+  profile_url: URL
+  message: Message
+
+two:
+  name: MyString2
+  email: MyString2
+  profile_url: URL2
+  message: Message2
