@@ -12,6 +12,7 @@ gem 'mysql2', '~> 0.3.11'
 gem 'figaro'
 gem 'aws-sdk', '~> 3'
 gem 'bootstrap-sass', '~> 3.3.7'
+gem 'puma'
 
 group :development, :test do
   gem 'byebug'
