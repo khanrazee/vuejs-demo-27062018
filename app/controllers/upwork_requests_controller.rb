@@ -1,4 +1,7 @@
 class UpworkRequestsController < ApplicationController
+
+  before_action :set_upwork_request, only: [:update, :destroy]
+
   def index
     @upwork_requests = UpworkRequest.all
     respond_to do |format|
@@ -21,7 +24,6 @@ class UpworkRequestsController < ApplicationController
   end
 
   def update
-    @upwork_request = UpworkRequest.find(params[:id])
     respond_to do |format|
       format.json do 
         if @upwork_request.update(upwork_request_params)
@@ -34,13 +36,17 @@ class UpworkRequestsController < ApplicationController
   end
 
   def destroy
-    UpworkRequest.find(params[:id]).destroy
+    @upwork_request.destroy
     respond_to do |format|
       format.json { render :json => {}, :status => :no_content }
     end
   end
 
   private
+
+  def set_upwork_request
+    @upwork_request = UpworkRequest.find(params[:id])
+  end
 
   def upwork_request_params
     params.require(:upwork_request).permit(:name, :email, :profile_url, :message)
